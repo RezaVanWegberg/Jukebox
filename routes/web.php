@@ -49,6 +49,7 @@ Route::middleware(IsLoggedIn::class)->group(function () {
     Route::get('/playlist/destroy/{playlist}', [PlaylistController::class, 'destroy'])->name('playlist.destroy');
     Route::get('/playlist/show/{playlist}/{playlistId?}', [PlaylistController::class, 'show'])->name('playlist.show');
     Route::post('/playlist/add-song', [PlaylistController::class, 'addSong'])->name('playlist.addSong');
+    Route::delete('/playlist/remove-song/{playlist}/{song}', [PlaylistController::class, 'removeSong'])->name('playlist.removeSong');
 });
 
 

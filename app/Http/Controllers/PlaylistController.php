@@ -79,6 +79,14 @@ class PlaylistController extends Controller
     return redirect()->route('playlist.show', ['playlist' => $playlist->id]);
 
 }
+    /**
+     * remove a song from a playlist
+     */
+    public function removeSong(Playlist $playlist, Song $song)
+    {
+        $playlist->songs()->detach($song->id);
+        return redirect()->route('playlist.show', ['playlist' => $playlist->id]);
+    }
 
 
     /**
